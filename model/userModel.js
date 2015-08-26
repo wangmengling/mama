@@ -2,10 +2,11 @@ var express = require('express');
 var db = require('../db/db')
 
 var userSchema = new mongoose.Schema({
-  UserName:String,
-  PassWord:String,
-  Phone:String,
-  Email:String,
+  userName:String,
+  passWord:String,
+  phone:String,
+  email:String,
+  role:Number,
 })
 
- db.model({"UserModel",userSchema});
+ db.model({"User",userSchema});

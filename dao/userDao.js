@@ -18,7 +18,7 @@ exports.getUserByPhone = function (phone,callback){
 }
 
 exports.login = function(phone,passWord,callback){
-  UserModel.findOne({phone:phone,passWord:passWord},'userName',function(err,user){
+  UserModel.find({phone:phone,passWord:passWord},function(err,user){
     callback(err,user)
   })
 }

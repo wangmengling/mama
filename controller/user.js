@@ -17,8 +17,6 @@ exports.addUser = function(req,res,next) {
 
 exports.login = function(req,res,next) {
   UserDao.login('15828581089','123456',function(err,user) {
-    // body...
-    console.log(user);
     res.json(user);
   })
 }
