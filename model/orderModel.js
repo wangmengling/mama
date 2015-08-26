@@ -15,6 +15,8 @@ var orderSchema = new mongoose.Schema({
   payStatus:Number, // 1,未支付   2，支付一部分   3，完成支付
   payFirst:Number, //第一次支付金额
   payEnd:Number, //完成支付
+  content:String,
+  tag:String,
 })
 
  db.model({"order",orderSchema});
