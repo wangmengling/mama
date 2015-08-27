@@ -1,4 +1,4 @@
-var db = require('../db/db')
+var mongoose = require('../db/db')
 
 var orderSchema = new mongoose.Schema({
   orderNumber:String,
@@ -16,7 +16,8 @@ var orderSchema = new mongoose.Schema({
   payFirst:Number, //第一次支付金额
   payEnd:Number, //完成支付
   content:String,
-  tag:String,
+  tag:String,//标签
 })
 
- db.model({"order",orderSchema});
+var OrderModel =   mongoose.model({"order",orderSchema});
+module.exports = OrderModel

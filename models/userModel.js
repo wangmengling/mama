@@ -3,6 +3,7 @@ var express = require('express');
 var mongoose = require('../db/db')
 
 var userSchema = new mongoose.Schema({
+  userId:String,
   userName:String,
   passWord:String,
   phone:String,
@@ -12,5 +13,4 @@ var userSchema = new mongoose.Schema({
 })
 
 var UserModel = mongoose.model("User",userSchema);
-
 module.exports = UserModel
