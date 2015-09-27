@@ -16,7 +16,11 @@ exports.addUser = function(req,res,next) {
 }
 
 exports.login = function(req,res,next) {
-  UserDao.login('15828581089','123456',function(err,user) {
-    res.json(user);
+  var user = req.body
+  console.log(user);
+  console.log("sdfasdfa");
+  UserDao.login(user.phone,user.passWord,function(err,users) {
+    console.log(users)
+    res.json(users);
   })
 }
