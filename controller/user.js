@@ -1,4 +1,5 @@
 var UserDao    = require('../dao/userDao');
+var CodeDao    = require('../dao/codeDao');
 
 
 exports.index = function(req,res,next){
@@ -17,10 +18,15 @@ exports.addUser = function(req,res,next) {
 
 exports.login = function(req,res,next) {
   var user = req.body
-  console.log(user);
-  console.log("sdfasdfa");
+  // console.log(user);
+  res.json({ error: 'message' })
   UserDao.login(user.phone,user.passWord,function(err,users) {
-    console.log(users)
     res.json(users);
   })
+}
+
+exports.getCode = function(req,res,next){
+  var phone = req.body.phone
+  console.log(phone);
+  res.json({ code: '123456' })
 }
